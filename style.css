@@ -1,0 +1,250 @@
+/* global styles */
+html,
+body {
+  background: #f6f4f4;
+  overflow-y: hidden; /* vertical scrolling enabled after animation finishes */
+  overflow-x: hidden;
+}
+
+/* typography */
+h1 {
+  font-family: Special Elite, serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-family: Special Elite, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+h4 {
+  font-family: IBM Plex Sans, serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+p {
+  font-family: IBM Plex Sans, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  text-align: left;
+  max-width: 700px;
+}
+
+.description {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 100px;
+  margin-bottom: 10%;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.red {
+  color: #ed6559;
+}
+
+.yellow {
+  color: #edc24f;
+}
+
+a,
+a:visited {
+  color: #6cafcc;
+}
+
+#exploreMenu {
+  margin-bottom: 50px;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+
+  z-index: 100000;
+  animation-name: fadeIn;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.blankMenu {
+  display: block;
+  position: fixed;
+  z-index: 12;
+  min-width: 110%;
+}
+
+#linksMenu {
+  display: none;
+  z-index: 12;
+  animation-name: slideDown;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  100% {
+  }
+}
+
+nav span {
+  position: fixed;
+  color: #ffffff;
+  font-size: 60px;
+  top: 5%;
+  right: 20%;
+  z-index: 12;
+}
+
+nav #searchIcon {
+  position: fixed;
+  margin-top: 50px;
+
+  z-index: 12;
+}
+nav ul {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  z-index: 12;
+}
+nav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+nav ul li a,
+nav ul li a:visited {
+  position: relative;
+  color: #ffffff;
+  font-family: IBM Plex Sans, serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+  padding: 20px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background: #34455a;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* desktop styling */
+@media only screen and (min-width: 1000px) {
+  *::-webkit-scrollbar {
+    display: block;
+    width: 20px;
+  }
+  *::-webkit-scrollbar-track {
+    background-color: #f0f6f7;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgb(237, 101, 89);
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(237, 101, 89, 1) 0%,
+      rgba(253, 187, 45, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(237, 101, 89, 1) 0%,
+      rgba(253, 187, 45, 1) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(237, 101, 89, 1) 0%,
+      rgba(253, 187, 45, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed6559",endColorstr="#fdbb2d",GradientType=1);
+    border-radius: 5px;
+  }
+
+  #linksMenu {
+    display: block;
+  }
+  .blankMenu {
+    right: 0;
+    min-width: auto;
+    max-height: 350px;
+  }
+
+  #exploreMenu {
+    display: none;
+  }
+
+  nav span {
+    display: none;
+  }
+  nav #searchIcon {
+    position: fixed;
+    max-width: 50px;
+    z-index: 12;
+  }
+  nav ul {
+    left: 89%;
+    top: 5%;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+  nav ul li a,
+  nav ul li a:visited {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
