@@ -19,7 +19,7 @@
 
 ### Built With
 * [SuperHi](https://superhi.com)
-* [Figma] (https://figma.com)
+* [Figma](https://figma.com)
 
 ### Acknowledgements
 * [Original Oblong Books Website](https://www.oblongbooks.com)
