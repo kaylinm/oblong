@@ -29,14 +29,17 @@
 
 .carousel-images img {
   margin-right: 5%;
-  border-bottom: #c19a6b;
+  transform: scale(1);
+  transition: all 0.5s ease;
+  border-bottom: 0px solid #c19a6b;
   border-radius: 25px;
   flex: 0 0 auto;
 }
 .carousel-images img:hover {
   transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
   border-bottom: 50px solid #c19a6b;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .carousel-text {
@@ -44,9 +47,50 @@
   padding-bottom: 100px;
 }
 
+section.newsletter {
+  display: flex;
+  flex-direction: column;
+  background: #e7f6f8;
+  text-align: center;
+  align-items: center;
+  padding: 30px;
+}
+
+section.newsletter p {
+  font-size: 17px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+section.newsletter form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+section.newsletter input {
+  font-family: IBM Plex Sans, serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  height: 50px;
+  width: 80%;
+}
+
+.newsletter-form button {
+  padding: 12px 14px;
+  position: relative;
+}
+
 /*desktop styling */
 @media only screen and (min-width: 1000px) {
   .carousel-images {
     justify-content: center;
+  }
+  section.newsletter input {
+    font-family: IBM Plex Sans, serif;
+    font-size: 15px;
+    padding: 12px 14px;
+    height: 50px;
+    width: 50%;
   }
 }

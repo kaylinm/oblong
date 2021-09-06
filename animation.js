@@ -4,28 +4,32 @@ if ("scrollRestoration" in window.history) {
 }
 
 window.addEventListener("load", (event) => {
-  /* enables vertical scrolling after animation ends */
-  body = document.body;
   html = document.querySelector("html");
-  setTimeout(function () {
-    html.style.overflowY = "auto";
-    body.style.overflowY = "auto";
-  }, 1000);
-
   /* opens and closes mobile menu */
   exploreMenu = document.getElementById("exploreMenu");
   linksMenu = document.getElementById("linksMenu");
   x = document.getElementById("x");
+  footer = document.getElementsByTagName("footer");
+  section = document.getElementsByTagName("section");
 
   exploreMenu.addEventListener("click", (event) => {
     html.style.overflowY = "hidden";
-    exploreMenu.style.display = "none";
+    exploreMenu.style.visibility = "hidden";
     linksMenu.style.display = "block";
+    footer[0].style.visibility = "hidden";
+
+    for (let i = 0; i < section.length; i++) {
+      section[i].style.visibility = "hidden";
+    }
   });
 
   x.addEventListener("click", (event) => {
     html.style.overflowY = "auto";
-    exploreMenu.style.display = "block";
+    exploreMenu.style.visibility = "visible";
     linksMenu.style.display = "none";
+    footer[0].style.visibility = "visible";
+    for (let i = 0; i < section.length; i++) {
+      section[i].style.visibility = "visible";
+    }
   });
 });

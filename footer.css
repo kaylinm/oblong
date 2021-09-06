@@ -38,6 +38,12 @@ footer .social-icons {
   margin-right: 5%;
 }
 
+footer a,
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
 /*desktop styling */
 @media only screen and (min-width: 1000px) {
   footer {
